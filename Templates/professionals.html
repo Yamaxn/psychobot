@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professionals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- Professionals content -->
+    <div class="professionals">
+        <h1>Meet our Professionals</h1>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='doctor-1.jpeg') }}" alt="Doctor 1">
+            <h2>Dr. John Doe</h2>
+            <p>Specialization: Clinical Psychology</p>
+            <p>Experience: 10 years</p>
+            <p>Email: johndoe@example.com</p>
+        </div>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='doctor-2.jpg') }}" alt="Doctor 2">
+            <h2>Dr. Jane Smith</h2>
+            <p>Specialization: Child Psychology</p>
+            <p>Experience: 8 years</p>
+            <p>Email: janesmith@example.com</p>
+        </div>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='doctor-3.jpeg') }}" alt="Doctor 3">
+            <h2>Dr. Michael Johnson</h2>
+            <p>Specialization: Cognitive Psychology</p>
+            <p>Experience: 15 years</p>
+            <p>Email: michaeljohnson@example.com</p>
+        </div>
+    </div>
+    <!-- Add more profiles as needed -->
+</body>
+
+</html>

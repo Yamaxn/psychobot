@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <a href="{{ url_for('index') }}" class="logo">
+        <img src="{{ url_for('static', filename='Brand-Logo1.png') }}" alt="Psychobot Logo">
+    </a>
+    <a href="{{ url_for('index') }}" class="brand-name">Psychobot</a>
+    <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('professionals') }}">Professionals</a></li>
+        <li><a href="{{ url_for('articles') }}">Articles</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+    </ul>
+</nav>

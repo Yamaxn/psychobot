@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychobot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Include the navbar directly -->
+    {% include 'navbar.html' %}
+    
+    <!-- Side Menu -->
+    <aside class="side-menu">
+        <div class="top">
+            <ul>
+                <li><a href="#" class="create-chat">+ New Chat</a></li>
+                <li><a href="#">History</a></li>
+            </ul>
+        </div>
+        <div class="bot">
+            <ul>
+                <li><a href="#">Upgrade+</a></li>
+                <li><a href="{{ url_for('terms') }}">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Chatbot Section -->
+    <section class="chatbot">
+        <div class="chat-log">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Message Psychobot...">
+            <button>Send</button>
+        </div>
+    </section>
+</body>
+
+</html>

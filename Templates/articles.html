@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Include the navbar directly -->
+    {% include 'navbar.html' %}
+
+    <!-- Articles content -->
+    <div class="articles">
+        <h1>Articles</h1>
+        <div class="article">
+            <h2>Understanding Depression</h2>
+            <p>Understanding depression is an essential aspect of mental health awareness.
+                Depression is a mood disorder that causes persistent feelings of sadness,
+                hopelessness, and loss of interest in activities. It can affect how you feel,
+                think, and handle daily activities, impacting various aspects of life, including
+                work, relationships, and physical health. Understanding depression involves
+                recognizing its symptoms, such as persistent sadness, fatigue, changes in appetite
+                or sleep patterns, and feelings of worthlessness or guilt. It's crucial to seek
+                help from mental health professionals and support from loved ones to manage
+                depression effectively. Treatment options may include therapy, medication,
+                lifestyle changes, and support groups.</p>
+            <a href="https://journals.lww.com/armh/fulltext/2017/05010/understanding_depression__an_overview.25.aspx"
+                target="_blank">Read More</a>
+        </div>
+        <div class="article">
+            <h2>Anxiety Disorders Explained</h2>
+            <p>Anxiety disorders are mental health conditions characterized by excessive worry, fear, and nervousness
+                that can interfere with daily life. They encompass a range of disorders, including generalized anxiety
+                disorder (GAD), panic disorder, social anxiety disorder, and specific phobias. Symptoms may include
+                restlessness, fatigue, difficulty concentrating, muscle tension, and sleep disturbances. Anxiety
+                disorders can vary in severity, but treatment options such as therapy, medication, and lifestyle changes
+                can help manage symptoms and improve quality of life. Early recognition and intervention are crucial for
+                effective management of anxiety disorders.
+            </p>
+            <a href="https://newsinhealth.nih.gov/2016/03/understanding-anxiety-disorders" target="_blank">Read More</a>
+        </div>
+        <div class="article">
+            <h2>Coping with Stress</h2>
+            <p>Stress is a common part of life, but excessive or prolonged stress can have negative effects on both
+                physical and mental health. This article explores effective strategies for coping with stress, including
+                relaxation techniques, mindfulness practices, exercise, and healthy lifestyle habits. By implementing
+                these coping mechanisms, individuals can better manage stress and improve their overall well-being.
+            </p>
+            <a href="https://www.helpguide.org/articles/stress/stress-management.htm" target="_blank">Read More</a>
+        </div>
+</body>
+
+</html>

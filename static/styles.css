@@ -1,0 +1,345 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #282c34;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: auto; /* allow scrolling */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #000000; /* Change the background color of the navbar */
+    color: white; /* Change the text color of the navbar */
+    padding: 10px; /* Add padding to the navbar */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 40px; /* Set the width of the logo image */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.brand-name {
+    font-size: 24px; /* Set the font size */
+    font-weight: bold; /* Set the font weight */        
+    color: #fff; /* Set the text color */
+    margin-left: 5px; /* Add some left margin for spacing */
+    text-decoration: none; /* Remove underline */  
+    margin-right: auto;  
+}
+
+.nav-links {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Add margin between list items */
+}
+
+.nav-links li:first-child {
+    margin-left: 0; /* Remove margin from the first list item */
+}
+
+.nav-links a {
+    color: white; /* Set the font color of links to white */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Side Menu styles */
+.side-menu {
+    background-color: #282c34;
+    width: 200px;
+    height: calc(100vh - 20px);
+    float: left;
+}
+
+/* Style for top section of side menu */
+.side-menu .top {
+    padding-bottom: 30px; /* Add some spacing at the bottom of the top section */
+}
+
+.side-menu .top ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.side-menu .top li {
+    margin-bottom: 10px; /* Add spacing between top section links */
+}
+.side-menu .top a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+
+}
+
+/* Targeting the "Create Chat" button */
+.side-menu .top .create-chat {
+    text-align: center; /* Center text */
+    display: block;
+    width: 200px; /* Set button width */
+    padding: 10px; /* Add padding to the button */
+    background-color: transparent; /* Add background color */
+    color: white; /* Set text color */
+    font-size: 16px; /* Set font size for button */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Add border radius */
+}
+
+.side-menu .top .create-chat:hover {
+    background-color: #525352; /* Change background color on hover */
+}
+
+/* Style for bottom section of side menu */
+.side-menu .bot {
+    position: absolute;
+    bottom: 0px; /* Position the bottom menu at the very bottom */
+    left: 0;
+    width: 200px;
+    padding-top: 20px; /* Add some spacing at the top of the bottom section */
+}
+
+.side-menu .bot ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.side-menu .bot li {
+    margin-bottom: 5px; /* Add spacing between bottom section links */
+}
+
+.side-menu .bot a {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 13px; /* Set font size for bottom section links */
+    color: white; /* Set text color */
+    /* Add any other styles specific to bottom section links */
+}
+
+.side-menu .bot a:hover {
+    text-decoration: underline;
+}
+
+/* Chatbot Section styles */
+.chatbot {
+    padding: 20px;
+    margin-left: 200px; /* Adjusted to accommodate side menu width */
+    background-color: #2f333c;
+    border-left: 1px solid #ccc;
+    height: calc(100vh - 20px);
+}
+
+.chat-log {
+    max-height: calc(100vh - 200px);
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+.chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    margin-left: 4px;
+    background-color: #2b2b2b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #525352; /* Change background color on hover */
+
+}
+/* Styles for professionals page */
+
+.professionals {
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.profile img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.profile h2 {
+    margin-bottom: 5px;
+}
+
+.profile p {
+    margin-bottom: 5px;
+}
+
+/* Styles for articles page */
+
+.articles {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: auto;
+    color: white;
+}
+
+.article {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: transparent; /* Background color for article box */
+}
+
+.article h2 {
+    margin-bottom: 10px;
+    color: #e3e3e3;
+}
+
+.article p {
+    color: #b9b9b9;
+    margin-bottom: 10px;
+    text-align: justify;
+
+}
+.article a {
+    color: #1d5fb6;
+}
+
+.read-more {
+    text-align: right;
+}
+
+.read-more a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.read-more a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for .terms and its children */
+.terms {
+    max-width: 800px; /* Set maximum width for content */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 20px; /* Add padding */
+}
+
+.terms h1 {
+    color: white;
+    margin-top: 20px; /* Add margin to top */
+}
+
+.terms p {
+    color: #ccc;    margin-bottom: 20px; /* Add margin to bottom */
+    text-align: justify;
+}
+
+.terms a {
+    color: #fff; /* Set link color */
+    text-decoration: underline; /* Add underline */
+}
+
+.terms a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Styles for the login page */
+.login-form {
+    max-width: 400px; /* Set maximum width for the login form */
+    margin: 50px auto; /* Center the login form */
+    padding: 20px; /* Add padding */
+    background-color: #f0f0f0; /* Set background color */
+    border-radius: 5px; /* Add border radius */
+}
+
+.login-form h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Add margin bottom */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Add margin bottom for form groups */
+}
+
+.form-group label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add margin bottom for labels */
+}
+
+.form-group input {
+    width: 100%; /* Set input width to 100% */
+    padding: 10px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+
+.loginbutton {
+    width: 100%; /* Set button width to 100% */
+    padding: 10px; /* Add padding */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+/* Additional links styles */
+.extra-links {
+    text-align: center; /* Center the links */
+    margin-top: 10px; /* Add margin top */
+}
+
+.extra-links a {
+    color: #007bff; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 13px;
+}
+
+.extra-links a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+.extra-links span {
+    margin: 0 5px; /* Add margin around the separator */
+}
