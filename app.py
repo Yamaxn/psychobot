@@ -19,6 +19,10 @@ def articles():
 def login():
     return render_template('login.html')
 
+@app.route('/Signup')
+def signup():
+    return render_template('signup.html')
+
 @app.route('/Terms-conditions')
 def terms():
     return render_template('terms.html')

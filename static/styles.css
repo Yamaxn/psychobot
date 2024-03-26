@@ -264,6 +264,7 @@ body {
 .terms h1 {
     color: white;
     margin-top: 20px; /* Add margin to top */
+    margin-bottom: 10px;
 }
 
 .terms p {
@@ -318,6 +319,7 @@ body {
     border: none; /* Remove border */
     border-radius: 5px; /* Add border radius */
     cursor: pointer; /* Add cursor pointer */
+    font-size: 15px;
 }
 
 button:hover {
@@ -333,7 +335,7 @@ button:hover {
 .extra-links a {
     color: #007bff; /* Set link color */
     text-decoration: none; /* Remove underline */
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .extra-links a:hover {
@@ -342,4 +344,88 @@ button:hover {
 
 .extra-links span {
     margin: 0 5px; /* Add margin around the separator */
+}
+
+.google {
+    width: 100%; /* Set button width to 100% */
+    margin-top: 20px;
+    padding: 10px; /* Add padding */
+    background-color: #007bff; /* Set background color */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.google a{
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Sign Up Page Styles */
+
+.signup-heading {
+    text-align: center; /* Center align the heading */
+    margin-top: 15px;
+    margin-bottom: 15px; /* Add top margin */
+}
+
+.signup-form {
+    max-width: 400px; /* Set maximum width for the form */
+    margin: 10px auto; /* Center align the form */
+    padding: 15px; /* Add padding */
+    background-color: #ffffff; /* Set background color for the form */
+    border-radius: 5px; /* Add border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Add bottom margin for form groups */
+}
+
+.form-label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add bottom margin for labels */
+    font-weight: bold; /* Set font weight */
+}
+
+.form-input {
+    width: 100%; /* Set input width to 100% */
+    padding: 10px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+
+.signup-button {
+    width: 100%; /* Set button width to 100% */
+    padding: 10px; /* Add padding */
+    background-color: #007bff; /* Set background color for the button */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+    font-size: 15px;
+}
+
+.signup-button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+.signup-link {
+    color: #171515;
+    text-align: center; /* Center align the link */
+    margin-top: 10px; /* Add top margin */
+    font-size: 15px;
+}
+
+.signup-link a {
+    color: #007bff; /* Set link color */
+    font-size: 15px;
+    text-decoration: none; /* Remove underline */
+}
+
+.signup-link a:hover {
+    text-decoration: underline; /* Add underline on hover */
 }
