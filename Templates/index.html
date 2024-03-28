@@ -16,7 +16,7 @@
     <aside class="side-menu">
         <div class="top">
             <ul>
-                <li><a href="#" class="create-chat">+ New Chat</a></li>
+                <li><a href="#" id="newChatBtn" class="create-chat">+ New Chat</a></li>
                 <li><a href="#">History</a></li>
             </ul>
         </div>
@@ -35,17 +35,66 @@
                 <h2>Welcome to Psychobot</h2>
                 <p>Chat with our AI Psychologist</p>
             </div>
-            <div class="chat-log">
+            <div class="chat-log" id="chatLog">
                 <!-- Chat messages will be displayed here -->
-                <p>User: Hello, Psychobot!</p>
-                <p>Psychobot: Hi there! How can I assist you today?</p>
             </div>
             <div class="chat-input">
-                <input type="text" placeholder="Message Psychobot...">
-                <button>Send</button>
+                <input type="text" id="messageInput" placeholder="Message Psychobot...">
+                <button id="sendButton">Send</button>
             </div>
         </div>
     </section>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Function to clear the chat log
+        function clearChat() {
+            $('#chatLog').empty(); // Remove all content from the chat log
+        }
+    
+        // Event listener for the "+ New Chat" button
+        $('#newChatBtn').click(function() {
+            clearChat(); // Call the clearChat function when the button is clicked
+        });
+    
+        // Function to send a message to the backend and display the response
+        function sendMessage() {
+            // Get the message from the input field
+            var message = $('#messageInput').val();
+    
+            // Clear the input field
+            $('#messageInput').val('');
+    
+            // Send a POST request to the backend
+            $.ajax({
+                url: '/send_message',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ message: message }),
+                success: function(response) {
+                    // Append the response to the chat log
+                    $('#chatLog').append('<p>User: ' + message + '</p>');
+                    $('#chatLog').append('<p>Psychobot: ' + response.response + '</p>');
+                }
+            });
+        }
+    
+        // Event listener for the send button
+        $('#sendButton').click(function() {
+            sendMessage();
+        });
+    
+        // Event listener for pressing Enter key
+        $('#messageInput').keypress(function(event) {
+            if (event.which == 13) {
+                sendMessage();
+            }
+        });
+    </script>
+    
+
 </body>
 
 </html>

@@ -5,9 +5,11 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     background-color: #282c34;
-    height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     overflow: auto; /* allow scrolling */
 }
@@ -61,7 +63,7 @@ body {
 .side-menu {
     background-color: #282c34;
     width: 200px;
-    height: calc(100vh - 20px);
+    height: calc(100vh - 50px);
     float: left;
 }
 
@@ -106,11 +108,10 @@ body {
 
 /* Style for bottom section of side menu */
 .side-menu .bot {
-    position: absolute;
-    bottom: 0px; /* Position the bottom menu at the very bottom */
+    position: fixed;
+    bottom: 30px; /* Position the bottom menu at the very bottom */
     left: 0;
     width: 200px;
-    padding-top: 20px; /* Add some spacing at the top of the bottom section */
 }
 
 .side-menu .bot ul {
@@ -141,9 +142,10 @@ body {
     margin-left: 200px; /* Adjusted to accommodate side menu width */
     background-color: #2f333c;
     border-left: 1px solid #ccc;
-    height: calc(100vh - 20px);
+    height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
+    margin-bottom: 0;
 }
 
 .chat-container {
@@ -151,6 +153,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 60px;
 }
 
 .chat-header {
@@ -171,9 +174,12 @@ body {
 .chat-log {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    padding: 2px;
     background-color: transparent;
     border-bottom: 1px solid #ccc;
+    max-height: 350px; /* Set a maximum height to limit the chat log's height */
+    margin-bottom: 0; /* Remove margin bottom */
+
 }
 
 .chat-log p {
@@ -185,7 +191,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 0; /* Remove margin bottom */
+
 }
 
 .chat-input input {
@@ -193,6 +201,7 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 
 .chat-input button {
@@ -465,5 +474,37 @@ button:hover {
 }
 
 .signup-link a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Dashboard Page Styles */
+
+.dashboard {
+    max-width: 800px; /* Set maximum width for the dashboard content */
+    margin: 0 auto; /* Center the dashboard content horizontally */
+    padding: 20px; /* Add padding */
+    color: white; /* Set text color */
+}
+
+.dashboard h1 {
+    text-align: center; /* Center align the heading */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+/* Additional styles for the welcome message */
+.dashboard h1::after {
+    content: ", " attr(data-username); /* Add a comma and the username after the heading */
+}
+
+.dashboard a {
+    color: #007bff; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 15px; /* Set font size for links */
+    display: block; /* Display links as block elements */
+    text-align: center; /* Center align the links */
+    margin-top: 20px; /* Add top margin */
+}
+
+.dashboard a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
