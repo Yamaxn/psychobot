@@ -10,7 +10,7 @@
 
 <body>
     <!-- Navbar -->
-    {% include 'navbar.html' %}
+    {% include 'navbar.html' %} 
 
     <!-- Login form -->
     <div class="login-form">
@@ -32,6 +32,7 @@
             <a href="{{ url_for('signup') }}">Don't have an account? Sign up</a>
         </div>
         <div class="google">
+            <img src="{{ url_for('static', filename='google-icon.jpg') }}" alt="">
             <a href="#" class="google-button">Continue with Google</a>
         </div>
     </div>

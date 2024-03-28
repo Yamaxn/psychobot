@@ -11,7 +11,7 @@
 <body>
     <!-- Include the navbar directly -->
     {% include 'navbar.html' %}
-    
+
     <!-- Side Menu -->
     <aside class="side-menu">
         <div class="top">
@@ -30,12 +30,20 @@
 
     <!-- Chatbot Section -->
     <section class="chatbot">
-        <div class="chat-log">
-            <!-- Chat messages will be displayed here -->
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Message Psychobot...">
-            <button>Send</button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Welcome to Psychobot</h2>
+                <p>Chat with our AI Psychologist</p>
+            </div>
+            <div class="chat-log">
+                <!-- Chat messages will be displayed here -->
+                <p>User: Hello, Psychobot!</p>
+                <p>Psychobot: Hi there! How can I assist you today?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Message Psychobot...">
+                <button>Send</button>
+            </div>
         </div>
     </section>
 </body>
