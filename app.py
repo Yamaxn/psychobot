@@ -171,9 +171,9 @@ def chatbot():
     # Extract user input from the request
     user_input = request.json.get('message')
 
-    # Prepare the request to the OpenAI API
+    # Prepare the request to the OpenAI API, change the key.
     headers = {
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer API KEY",
         "Content-Type": "application/json"
     }
     data = {

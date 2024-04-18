@@ -108,7 +108,6 @@ html, body {
 
 /* Style for bottom section of side menu */
 .side-menu .bot {
-    position: fixed;
     bottom: 30px; /* Position the bottom menu at the very bottom */
     left: 0;
     width: 200px;
