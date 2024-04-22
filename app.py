@@ -1,30 +1,49 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-import mysql.connector, requests
+import mysql.connector 
+import requests, rasa
+
+
+# Define the Rasa server URL
+RASA_SERVER_URL = 'http://0.0.0.0:5005/webhooks/rest/webhook'
 
 app = Flask(__name__)
 app.secret_key = 'cheesecakefactory'  # Change this to a random string for security
 
-# OpenAI API endpoint
-OPENAI_API_URL = "https://api.openai.com/v1/completions"
-
 # Define routes
 @app.route('/')
+
 def index():
     return render_template('index.html')
 
 @app.route('/send_message', methods=['POST'])
 def send_message():
     message = request.json['message']
-    user_id = session.get('user_id')  # Assuming user is logged in and user_id is stored in session
-
-     # Save the message to the database
+    # Send the user's message to the Rasa server
+    response = send_message_to_rasa(message)
+    # Extract the chatbot response from the Rasa server response
+    if response:
+        bot_response = response[0].get('text')
+    else:
+        bot_response = 'Error: No response from Rasa server'
+ 
+    # Save the message to the database
+    user_id = session.get('user_id') # Assuming user is logged in and user_id is stored in session
     save_to_database(user_id, message)
-    
-    # Process the user's message and generate a response
-    # Here you can use a chatbot model or any other method to generate responses
-    response = generate_response(message)
+ 
+    # Return the chatbot response to the frontend
+    return jsonify({'response': bot_response})
 
-    return jsonify({'response': response})
+def send_message_to_rasa(message):
+    # Prepare the request data
+    data = {'message': message}
+    # Send the request to the Rasa server
+    try:
+        rasa_response = requests.post(RASA_SERVER_URL, json=data)
+        rasa_response.raise_for_status()
+        return rasa_response.json()
+    except requests.exceptions.RequestException as e:
+        print('Error sending message to Rasa server:', e)
+        return None
 
 def save_to_database(user_id, message):
     try:
@@ -38,15 +57,6 @@ def save_to_database(user_id, message):
     except mysql.connector.Error as err:
         print("Error saving message to database:", err)
         
-def generate_response(message): 
-    # This is a placeholder function to generate a response
-    # Replace this with your actual logic to generate responses
-    if message.lower() == 'hello':
-        return "Hi there! How can I assist you today?"
-    else:
-        return "I'm sorry, I didn't understand that."
-    
-
 @app.route('/Professionals')
 def professionals():
     return render_template('professionals.html')
@@ -165,33 +175,6 @@ def dashboard():
     else:
         # If not logged in, redirect to the login page
         return redirect(url_for('login'))
-
-@app.route('/chatbot', methods=['POST'])
-def chatbot():
-    # Extract user input from the request
-    user_input = request.json.get('message')
-
-    # Prepare the request to the OpenAI API, change the key.
-    headers = {
-        "Authorization": "Bearer API KEY",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "prompt": user_input,
-        "max_tokens": 50
-    }
-
-    # Make the request to the OpenAI API
-    response = requests.post(OPENAI_API_URL, headers=headers, json=data)
-    
-    # Handle the response from the OpenAI API
-    if response.status_code == 200:
-        result = response.json()
-        # Extract the generated response from the OpenAI API
-        generated_response = result.get('choices')[0].get('text')
-        return jsonify({'response': generated_response})
-    else:
-        return jsonify({'error': 'Failed to generate response'})
     
 # Run the app
 if __name__ == '__main__':
