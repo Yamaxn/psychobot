@@ -4,35 +4,40 @@ import requests, rasa
 
 
 # Define the Rasa server URL
-RASA_SERVER_URL = 'http://0.0.0.0:5005/webhooks/rest/webhook'
+RASA_SERVER_URL = 'http://localhost:5005/webhooks/rest/webhook'
 
 app = Flask(__name__)
 app.secret_key = 'cheesecakefactory'  # Change this to a random string for security
 
 # Define routes
 @app.route('/')
-
 def index():
     return render_template('index.html')
 
 @app.route('/send_message', methods=['POST'])
 def send_message():
-    message = request.json['message']
-    # Send the user's message to the Rasa server
-    response = send_message_to_rasa(message)
-    # Extract the chatbot response from the Rasa server response
-    if response:
-        bot_response = response[0].get('text')
-    else:
-        bot_response = 'Error: No response from Rasa server'
- 
-    # Save the message to the database
-    user_id = session.get('user_id') # Assuming user is logged in and user_id is stored in session
-    save_to_database(user_id, message)
- 
-    # Return the chatbot response to the frontend
-    return jsonify({'response': bot_response})
+    if request.method == 'POST':
+        message = request.json.get('message')  # Get the message from the JSON request
+        if message:
+            # Send the user's message to the Rasa server
+            response = send_message_to_rasa(message)
+            # Extract the chatbot response from the Rasa server response
+            if response:
+                bot_response = response[0].get('text')
+            else:
+                bot_response = 'Error: No response from Rasa server'
 
+            # Save the message to the database
+            user_id = session.get('user_id')  # Assuming user is logged in and user_id is stored in session
+            save_to_database(user_id, message)
+
+            # Return the chatbot response to the frontend
+            return jsonify({'response': bot_response})
+        else:
+            return jsonify({'response': 'Error: No message provided'}), 400
+    else:
+        return jsonify({'response': 'Error: Only POST requests are allowed'}), 405
+    
 def send_message_to_rasa(message):
     # Prepare the request data
     data = {'message': message}
@@ -45,15 +50,18 @@ def send_message_to_rasa(message):
         print('Error sending message to Rasa server:', e)
         return None
 
+
 def save_to_database(user_id, message):
     try:
-        connection = connect_to_database()
-        cursor = connection.cursor()
-        cursor.execute("INSERT INTO chat_logs (user_id, message) VALUES (%s, %s)", (user_id, message))
-        connection.commit()
-        cursor.close()
-        connection.close()
-        print("Message saved to database successfully")
+        # Check if the user is logged in
+        if user_id:
+            connection = connect_to_database()
+            cursor = connection.cursor()
+            cursor.execute("INSERT INTO chat_logs (user_id, message) VALUES (%s, %s)", (user_id, message))
+            connection.commit()
+            cursor.close()
+            connection.close()
+            print("Message saved to database successfully")
     except mysql.connector.Error as err:
         print("Error saving message to database:", err)
         

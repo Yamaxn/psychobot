@@ -219,31 +219,48 @@ html, body {
 }
 /* Styles for professionals page */
 
-.professionals {
-    color: white;
-    max-width: 800px;
-    margin: 0 auto;
+.professionals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    grid-gap: 20px; /* Add gap between profile cards */
+    max-width: 1000px;
+    margin: 20px auto; /* Center the grid */
     padding: 20px;
 }
 
-.profile {
-    margin-top: 20px;
-    border: 1px solid #ccc;
+.profile-card {
+    background-color: #2f333c; /* Set background color for profile cards */
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
 
-.profile img {
+.profile-card img {
     width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto; /* Center the image */
 }
 
-.profile h2 {
-    margin-bottom: 5px;
+.profile-info {
+    color: #a0aec0; /* Change the font color for profile names */
+    text-align: center; /* Center align profile information */
 }
 
-.profile p {
+.profile-info h2 {
+    margin-bottom: 10px;
+}
+
+.profile-info p {
     margin-bottom: 5px;
+    color: #ccc; /* Set text color for profile details */
+}
+
+.profile-info p i {
+    margin-right: 5px; /* Add margin between icon and text */
+    color: #007bff; /* Set color for icons */
 }
 
 /* Styles for articles page */
@@ -319,6 +336,25 @@ html, body {
 .terms a:hover {
     color: #ffcc00; /* Change color on hover */
 }
+
+/* Styles for back button container */
+.back-button-container {
+    margin-top: 20px; /* Adjust margin as needed */
+    text-align: left;
+}
+
+/* Styles for back button */
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
 
 /* Styles for the login page */
 .login-form {

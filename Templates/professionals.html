@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professionals</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
 </head>
 
 <body>
@@ -13,31 +14,63 @@
     {% include 'navbar.html' %}
 
     <!-- Professionals content -->
-    <div class="professionals">
-        <h1>Meet our Professionals</h1>
-        <div class="profile">
+    <div class="professionals-grid">
+        <div class="profile-card">
             <img src="{{ url_for('static', filename='doctor-1.jpeg') }}" alt="Doctor 1">
-            <h2>Dr. John Doe</h2>
-            <p>Specialization: Clinical Psychology</p>
-            <p>Experience: 10 years</p>
-            <p>Email: johndoe@example.com</p>
+            <div class="profile-info">
+                <h2>Dr. John Doe</h2>
+                <p><i class="fas fa-user-md"></i> Clinical Psychology</p>
+                <p><i class="fas fa-clock"></i> 10 years experience</p>
+                <p><i class="fas fa-envelope"></i> johndoe@example.com</p>
+            </div>
         </div>
-        <div class="profile">
+        <div class="profile-card">
             <img src="{{ url_for('static', filename='doctor-2.jpg') }}" alt="Doctor 2">
-            <h2>Dr. Jane Smith</h2>
-            <p>Specialization: Child Psychology</p>
-            <p>Experience: 8 years</p>
-            <p>Email: janesmith@example.com</p>
+            <div class="profile-info">
+                <h2>Dr. Jane Smith</h2>
+                <p><i class="fas fa-user-md"></i> Child Psychology</p>
+                <p><i class="fas fa-clock"></i> 8 years experience</p>
+                <p><i class="fas fa-envelope"></i> janesmith@example.com</p>
+            </div>
         </div>
-        <div class="profile">
+        <div class="profile-card">
             <img src="{{ url_for('static', filename='doctor-3.jpeg') }}" alt="Doctor 3">
-            <h2>Dr. Michael Johnson</h2>
-            <p>Specialization: Cognitive Psychology</p>
-            <p>Experience: 15 years</p>
-            <p>Email: michaeljohnson@example.com</p>
+            <div class="profile-info">
+                <h2>Dr. Michael Johnson</h2>
+                <p><i class="fas fa-user-md"></i> Cognitive Psychology</p>
+                <p><i class="fas fa-clock"></i> 15 years experience</p>
+                <p><i class="fas fa-envelope"></i> michaeljohnson@example.com</p>
+            </div>
+        </div>
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='doctor-3.jpeg') }}" alt="Doctor 3">
+            <div class="profile-info">
+                <h2>Dr. Michael Johnson</h2>
+                <p><i class="fas fa-user-md"></i> Cognitive Psychology</p>
+                <p><i class="fas fa-clock"></i> 15 years experience</p>
+                <p><i class="fas fa-envelope"></i> michaeljohnson@example.com</p>
+            </div>
+        </div>
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='doctor-3.jpeg') }}" alt="Doctor 3">
+            <div class="profile-info">
+                <h2>Dr. Michael Johnson</h2>
+                <p><i class="fas fa-user-md"></i> Cognitive Psychology</p>
+                <p><i class="fas fa-clock"></i> 15 years experience</p>
+                <p><i class="fas fa-envelope"></i> michaeljohnson@example.com</p>
+            </div>
+        </div>
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='doctor-3.jpeg') }}" alt="Doctor 3">
+            <div class="profile-info">
+                <h2>Dr. Michael Johnson</h2>
+                <p><i class="fas fa-user-md"></i> Cognitive Psychology</p>
+                <p><i class="fas fa-clock"></i> 15 years experience</p>
+                <p><i class="fas fa-envelope"></i> michaeljohnson@example.com</p>
+            </div>
         </div>
     </div>
-    <!-- Add more profiles as needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> <!-- Font Awesome script -->
 </body>
 
 </html>
