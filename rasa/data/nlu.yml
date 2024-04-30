@@ -9,7 +9,6 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin
     - hey there
     - let's go
     - hey dude
@@ -106,3 +105,29 @@ nlu:
     - Tell me about the physical symptoms of depression
     - What are the behavioral symptoms of depression?
     - Explain the symptoms of major depressive disorder
+    - intent: ask_about_psychology
+  examples: |
+    - Can you tell me about psychology?
+    - What is psychology?
+    - I'm interested in learning about psychology
+    - Tell me something about the field of psychology
+- intent: ask_about_mental_health
+  examples: |
+    - What is mental health?
+    - Can you explain mental health to me?
+    - How can I improve my mental health?n
+- intent: ask_about_emotions
+  examples: |
+    - What are emotions?
+    - How do emotions affect behavior?
+    - Can you tell me about emotional intelligence?
+- intent: ask_about_cognitive_psychology
+  examples: |
+    - What is cognitive psychology?
+    - Can you explain cognitive processes to me?
+    - How does memory work?
+- intent: ask_about_social_psychology
+  examples: |
+    - What is social psychology?
+    - Can you tell me about group behavior?
+    - How do people influence each other?
