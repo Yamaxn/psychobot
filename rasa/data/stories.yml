@@ -28,10 +28,24 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-
-- story: interactive_story_1
+  - story: User A seeks advice on managing anxiety attacks
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: symptoms
-  - intent: emotions
+    - intent: ask_advice_anxiety_attack
+    - action: utter_acknowledge_anxiety_attack
+    - action: utter_suggest_coping_strategies
+
+- story: User B shares experience with coping strategies
+  steps:
+    - intent: share_experience
+    - action: utter_share_coping_strategy
+
+- story: User C shares experience with safety planning
+  steps:
+    - intent: share_experience
+    - action: utter_share_safety_plan
+
+- story: User D shares experience with medication management
+  steps:
+    - intent: share_experience
+    - action: utter_share_medication_management
+
